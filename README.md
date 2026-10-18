@@ -27,6 +27,7 @@ Schema design, normalization (up to 3NF and beyond where relevant), and SQL — 
 |---|---|---|
 | [`week01-interaction-design`](./week01-interaction-design) | ITUEA | Full interaction design breakdown of Spotify — conceptual model, two principles demonstrated well (feedback, visibility), one principle violated (affordance), and a mechanism-based redesign recommendation |
 | [`week02-conceptualising-interaction`](./week02-conceptualising-interaction) | ITUEA | WhatsApp analyzed through affordance theory (including a confirmed perceived-vs-real mismatch in the attachment menu), interface metaphors, and interaction paradigms (direct manipulation vs. natural language) |
+| [`week03-cognitive-aspects`](./week03-cognitive-aspects) | ITUEA | Google Maps analyzed through cognitive load theory — three load-reducing mechanisms (external cognition, recognition-over-recall, chunking) and one identified slip-risk with a proposed fix |
 | [`portfolio-ux-teardown`](./portfolio-ux-teardown) | ITUEA | Standalone portfolio case study on the Capitec Bank app — conceptual model, three affordances with verdicts, cognitive load analysis (including a slip-type error), and a redesign recommendation with reasoning tied back to visual-search theory |
 
 Each file follows a consistent structure: identify the concept, show concrete evidence from the live product, and where something fails, explain *why* the proposed fix addresses that specific failure mechanism rather than just suggesting a generic improvement.
