@@ -1,0 +1,34 @@
+# Conceptualising Interaction — WhatsApp
+*Applying affordance theory, interface metaphors, and interaction paradigms to a product used by over 2 billion people daily.*
+
+## App/Device
+**WhatsApp** (mobile, iOS/Android) — chosen because it's the single app I open most frequently in a day, across more contexts (business client communication for BAS TECH, personal messaging, group coordination) than almost anything else on my phone. That range of use makes it a good subject: a messaging app has to serve casual chat, urgent business coordination, and media sharing with the same interface, so its design decisions get stress-tested constantly.
+
+## Real Affordance
+**Control:** The microphone icon in the message input bar.
+
+**What it actually does:** Tapping and holding it records a voice note in real time; releasing your finger sends it immediately, while sliding your finger left cancels the recording before it sends. This is a genuine, fully-functional affordance — the control does exactly what tapping-and-holding visually suggests (press to activate, like a walkie-talkie button), and the slide-to-cancel gesture, while less obvious, is consistent with how physical sliders work once discovered.
+
+I picked this control specifically because it demonstrates **layered affordance**: the primary action (hold to record) is immediately discoverable through the icon's shape and position, while the secondary action (slide to cancel) is a *progressive disclosure* — it only needs to be learned by users who actually start recording and want to back out, so hiding it behind the primary gesture rather than cluttering the interface with a separate "cancel" button is a deliberate complexity-management decision.
+
+## Perceived vs Real Affordance (mismatch, or confirmed none)
+**Confirmed mismatch found:** The **pin icon** (paperclip/attachment icon in older versions, now a plus or paperclip depending on platform) perceptually suggests "attach a file," which is accurate for its primary function — but what it visually does *not* communicate is the number of distinct sub-affordances packed behind that single tap: camera, gallery, document, location, contact, and poll, each with meaningfully different data-sharing implications (a location share has privacy consequences a photo share doesn't; a document share can carry executable risk a photo can't).
+
+The interface treats all six of these as equally-weighted options in a single expanding menu, with identical visual styling (same icon size, same spacing, same lack of warning or distinction) regardless of how differently risky or consequential each option actually is. A user who has only ever used this button to send photos has no perceptual cue that the same button can also broadcast their live GPS location to a group chat — the *perceived* affordance ("attach a file") undersells the *real* range of what the control can do, and critically, undersells the differing stakes of each sub-option. This matters more than a typical minor UI quibble because the consequence of a misclick here (accidentally sharing location instead of a photo) is a genuine privacy incident, not just an undo-able inconvenience.
+
+## Metaphor Used
+WhatsApp is built around the **threaded conversation / letter-and-reply metaphor**, borrowed from SMS text messaging, which itself borrowed from the much older postal letter-and-reply model. Messages appear as speech-bubble-style blocks stacked chronologically, with your own messages visually distinguished (right-aligned, different color) from the other person's, exactly mirroring how a transcript of a spoken conversation or a stack of exchanged letters would read if laid out chronologically. This metaphor is so deeply embedded that it requires zero explanation for virtually any user on the planet with prior exposure to any messaging app — it has become a near-universal digital-literacy primitive rather than something WhatsApp itself had to teach.
+
+A secondary metaphor layered on top is the **"status" as a physical bulletin board or notice-board** — content that's visible to your contacts for a fixed period (24 hours) and then disappears, borrowing the real-world behavior of a notice pinned to a board that eventually gets taken down, rather than a permanent, searchable archive the way the main chat history is.
+
+## Interaction Paradigm(s)
+WhatsApp spans **two of the five paradigms**, which is itself a notable design observation:
+
+**1. Direct Manipulation** — the dominant paradigm for most of the app. Dragging to reply-quote a specific message, long-pressing a message to select/react/forward, pinch-to-zoom on a shared photo, and the slide-to-cancel voice note gesture described above are all direct, continuous manipulations of on-screen objects with immediate visual feedback, rather than issuing discrete commands. This paradigm fits messaging well because it keeps the cognitive overhead low during fast-paced, often one-handed, often distracted use (chatting while walking, chatting mid-conversation with someone else in the room).
+
+**2. Conversational/Natural Language Interaction** — distinct from direct manipulation, this paradigm governs the actual *content* of the interaction: typing free-form text is fundamentally a natural-language interface, where the system (the other human, not an AI) interprets unstructured input rather than the user selecting from constrained options. WhatsApp's voice notes extend this same paradigm into the audio domain — natural spoken language replacing typed natural language, with no structured command syntax involved.
+
+It's worth noting WhatsApp deliberately does **not** use a command-line or menu-driven paradigm for its core function (sending a message), despite using menu-driven paradigms for secondary settings (notification preferences, privacy controls) — a clear signal that paradigm choice is being matched to frequency and stakes of use: the highest-frequency action gets the lowest-friction paradigm, while rarely-used configuration gets a more structured, discoverable one.
+
+## Reflection
+The most useful finding here isn't any single affordance or metaphor in isolation — it's that WhatsApp's design consistently correlates interaction cost with action frequency: the thing you do thousands of times (send a message) uses the most frictionless paradigm available (direct manipulation + natural language), while the thing that carries real consequence but happens rarely (sharing your live location) is buried inside a generic, undifferentiated menu with no proportional visual weight. That's precisely the inverse of what good risk-aware design would do, and it's a pattern worth watching for in any interface I design myself — frequency should earn simplicity, but *consequence* should earn visibility, and those two principles can genuinely pull in opposite directions if a designer isn't deliberate about reconciling them.
